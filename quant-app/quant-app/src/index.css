@@ -1,0 +1,101 @@
+:root {
+  --bg-primary:    #080c10;
+  --bg-secondary:  #0d1318;
+  --bg-panel:      #111820;
+  --bg-card:       #161d26;
+  --border:        #1e2a36;
+  --border-bright: #2a3a4a;
+  --accent-blue:   #2dd4f7;
+  --accent-green:  #22d68a;
+  --accent-red:    #ff4d6a;
+  --accent-amber:  #f5a623;
+  --accent-purple: #a78bfa;
+  --text-primary:  #e8f0f8;
+  --text-secondary:#7a90a8;
+  --text-muted:    #3d5068;
+  --font-display:  'Syne', sans-serif;
+  --font-mono:     'Space Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--border-bright);
+  border-radius: 2px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  cursor: pointer;
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+input[type=number] {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+}
+input[type=number]:focus { border-color: var(--accent-blue); }
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+select:focus { border-color: var(--accent-blue); }
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 8px var(--accent-green); }
+  50%       { box-shadow: 0 0 20px var(--accent-green), 0 0 40px rgba(34,214,138,0.3); }
+}
